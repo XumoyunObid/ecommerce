@@ -1,0 +1,44 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+img {
+    max-width: 100%;
+    max-height: 100%;
+}
+input {
+    border: none;
+    border-bottom: 2px solid gray;
+    outline: none;
+}
+
+// #form-login, #form-register {
+// // margin-top: 200px;
+// }
+
+.card-wrapper {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 20px;
+
+    .card {
+        height: 500px;
+        // ::-webkit-scrollbar {
+        // display: none;
+    // }
+    }
+
+    img{
+        width: 100%;
+        aspect-ratio: 1;
+        object-fit: contain;
+        text-align: center;
+    }
+
+    .card-body {
+        overflow: scroll;
+    }
+}
