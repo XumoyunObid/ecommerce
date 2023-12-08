@@ -16,34 +16,34 @@ document.addEventListener("DOMContentLoaded", async () => {
         let pPrice = formProducts[5].value;
         let pImage = formProducts[6].value;
 
-        // let {products} = await axios.post(
-        //     "/products",
-        // {
-        //     name: pName,
-        //     category: pCategory,
-        //     color: pColor,
-        //     exists: pExists,
-        //     description: pDescription,
-        //     price: pPrice,
-        //     image: pImage,
-        // }, 
-        // {
-        //     headers: { authorization: `Bearer ${token}` },
-        // });
-        console.log(pName);
-        console.log(pCategory);
-        console.log(pColor);
-        console.log(pExists);
-        console.log(pDescription);
-        console.log(pPrice);
-
-    })
+        let {products} = await axios.post(
+            "/products",
+        {
+            name: pName,
+            category: pCategory,
+            color: pColor,
+            exists: pExists,
+            description: pDescription,
+            price: pPrice,
+            image: pImage,
+        }, 
+        {
+            headers: { authorization: `Bearer ${token}` },
+        });
+        // console.log(pName);
+        // console.log(pCategory);
+        // console.log(pColor);
+        // console.log(pExists);
+        // console.log(pDescription);
+        // console.log(pPrice);
+    });
 
     let getProducts = await axios.get("/products", {
         headers: { authorization: `Bearer ${token}` },
     });
 
     console.log(getProducts.data);
+    
 
     getProducts.data.forEach((products) => {
         let card = document.createElement("div");
@@ -75,13 +75,13 @@ document.addEventListener("DOMContentLoaded", async () => {
         color.innerText = "Color: " + products?.color.uz;
         cardBody.append(color);
 
-        let isExists = document.createElement("p");
-        isExists.innerText = "Exists: " + products?.exists;
-        cardBody.append(isExists);
+        // let isExists = document.createElement("p");
+        // isExists.innerText = "Exists: " + products?.exists;
+        // cardBody.append(isExists);
 
-        let description = document.createElement("p");
-        description.innerText = "Description: " + products?.description.uz;
-        cardBody.append(description);
+        // let description = document.createElement("p");
+        // description.innerText = "Description: " + products?.description.uz;
+        // cardBody.append(description);
 
         let cardFooter = document.createElement("div");
         cardFooter.classList.add("card-footer", "flex-column", "d-flex", "gap-2");
